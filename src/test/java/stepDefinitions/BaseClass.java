@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import Utils.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -11,7 +10,8 @@ public class BaseClass
     protected static WebDriver driver;
 
     // Constructor to initialize driver
-    public BaseClass() {
+    public BaseClass()
+    {
         setDriver();
         PageFactory.initElements(driver, this);
     }

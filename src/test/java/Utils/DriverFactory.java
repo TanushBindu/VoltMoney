@@ -25,23 +25,21 @@ public class DriverFactory
     }
 
     private static WebDriver createDriver(String browser) {
-        ChromeDriverManager.chromedriver().setup();
-//        switch (browser) {
-//            case "chrome":
-//                ChromeDriverManager.chromedriver().setup();
-//                setDriver(new ChromeDriver());
-//            case "firefox":
-//                FirefoxDriverManager.firefoxdriver().setup();
-//                setDriver(new FirefoxDriver());
-//            case "edge":
-//                EdgeDriverManager.edgedriver().setup();
-//                setDriver(new EdgeDriver());
-//            case "ie":
-//                InternetExplorerDriverManager.chromedriver().setup();
-//                setDriver(new InternetExplorerDriver());
-//            default:
-//                throw new IllegalArgumentException("Invalid browser name");
-//        }
-        return new ChromeDriver();
+        switch (browser) {
+            case "chrome":
+                ChromeDriverManager.chromedriver().setup();
+                return new ChromeDriver();
+            case "firefox":
+                FirefoxDriverManager.firefoxdriver().setup();
+                new FirefoxDriver();
+            case "edge":
+                EdgeDriverManager.edgedriver().setup();
+                new EdgeDriver();
+            case "ie":
+                InternetExplorerDriverManager.chromedriver().setup();
+               new InternetExplorerDriver();
+            default:
+                throw new IllegalArgumentException("Invalid browser name");
+        }
     }
 }
